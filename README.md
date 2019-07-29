@@ -13,6 +13,6 @@ The first part will be achieved through deep learning since swine houses are eas
 
 As a proof of concept, Google Map image above a small area (10-miles x 10 miles) was divided into 30x30 image, and manually swine farms image was identified and labeled. Since there were about 40 images with swine house,  they were increases by adding copies of left rotated, right rotated and 180 rotated (total of ~160). Then randomly 20% was set aside for test set and the rest for training. The same number of images labeled as not a swine farm was added randomly to each set(train and test) and then were randomly sorted.
 
-For a demonstration of NDWI change though time, Landsat image in years of  1984, 1985, 1990, 1994, 2001, and 2005 was downloaded from USGS (public available) and NDWI was calculated in ArcGIS (https://www.arcgis.com/home/item.html?id=05f1e9c7e740472a8f65b0c772342ff6). Later, NDWI values were manually retrieved in each year and plotted in Excel, which shows a clear drop.
+For a demonstration of NDWI change though time, Landsat image in years of  1984, 1985, 1990, 1994, 2001, and 2005 was downloaded from USGS (public available) and NDWI was calculated in ArcGIS (https://www.arcgis.com/home/item.html?id=05f1e9c7e740472a8f65b0c772342ff6). Later, NDWI values were manually retrieved in each year and plotted in Excel (https://drive.google.com/file/d/1tOU-cYwRIqBrZ0sSc2oCGSe8f_saGTPj/view?usp=sharing), which shows a clear drop.
 
 For future work, this method could be expanded for other animal facilities eg. chicken and cattle farms.
