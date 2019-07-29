@@ -1,1 +1,18 @@
-# The_Data_Incubator
+# The_Data_Incubator_Capstone
+## Livestock barn history and locations
+Air emissions from swine barns hurt public health, environment, and quality of life around their neighborhood. Deposition of ammonia gas on land and water lead to over-enrichment of lakes and rivers which cause algal bloom, death of fish, etc. Also, ammonia is a precursor of very fine dust that gets very deep in the human respiratory system. Last but not least, the odor will reduce property value around these farms. All of these emissions originated from a huge pile of animal manure which is also needed to be managed as well. The public available list of farms in states and federal agencies is limited to those farms who got a permit which is required for a certain size though is not always up to date. While updating or creating this database for all swine house (regardless of size) could be very labor-intensive and time-consuming, it is now achievable using satellite maps and machine learning technique. Thus, quickly and precisely locating every swine barns will lead to a database that could be used by:
+1. Public to increase awareness
+2. Business to identify hot spot locations to either provide or receiving service/material relating to these swine barns e.g., feed mill, meat processing plants, slaughterhouse, composting, waste treatment and biogas production plant.
+3. Researchers to evaluate the effect of these swine houses on air and water quality. To do so, the history of building farm is also a key which is extractable due to the availability of satellite imagery from the 1970s.
+4. Government to better regulate these farms or updating regulation, monitor permitting, and identify permit violation.
+
+The main goals of this project are to:
+1. Identify swine house locations in North Carolina
+2. Find the year on which farm was built
+The first part will be achieved through deep learning since swine houses are easily identifiable in satellite maps. They have comprised of several parallel long hoses and a lagoon in which animal manure is stored. The train set will be created based on the available list of swine house in the NC Department of Environmental Quality (DEQ) which is publicly available. For the second part, since the image quality back in time is not good enough to identify swine houses, a Normalized Differences Water Index (NDWI) will be used to identify the time of lagoon formation near the house. The NDWI with the range of (-1,1) will be calculated based on the different band from satellite image (Landsat 5). The NDWI for soil is near -1 and water are near 1.  By measuring NDWI at swine house location, which is identified in the first step, through time, rapid change in NDWI shows the time of lagoon formation which is quite the same as its farm building. 
+
+As a proof of concept, Google Map image above a small area (10-miles x 10 miles) was divided into 30x30 image, and manually swine farms image was identified and labeled. Since there were about 40 images with swine house,  they were increases by adding copies of left rotated, right rotated and 180 rotated (total of ~160). Then randomly 20% was set aside for test set and the rest for training. The same number of images labeled as not a swine farm was added randomly to each set(train and test) and then were randomly sorted.
+
+For a demonstration of NDWI change though time, Landsat image in years of  1984, 1985, 1990, 1994, 2001, and 2005 was downloaded from USGS (public available) and NDWI was calculated in ArcGIS. Later, NDWI values were manually retrieved in each year and plotted in Excel, which shows a clear drop.
+
+For future work, this method could be expanded for other animal facilities eg. chicken and cattle farms.
